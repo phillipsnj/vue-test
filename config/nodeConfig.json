@@ -1,0 +1,1641 @@
+{
+  "nodes": {
+    "300": {
+      "node": 300,
+      "manuf": 165,
+      "module": 46,
+      "flags": 6,
+      "consumer": false,
+      "producer": true,
+      "flim": true,
+      "bootloader": false,
+      "coe": false,
+      "parameters": [
+        20,
+        165,
+        6,
+        46,
+        0,
+        0,
+        47,
+        1,
+        6
+      ],
+      "variables": [],
+      "actions": {},
+      "component": "mergDefault"
+    },
+    "500": {
+      "node": 500,
+      "manuf": 165,
+      "module": 19,
+      "flags": 13,
+      "consumer": true,
+      "producer": false,
+      "flim": true,
+      "bootloader": true,
+      "coe": false,
+      "parameters": [
+        20,
+        165,
+        74,
+        19,
+        128,
+        3,
+        37,
+        4,
+        13,
+        13,
+        1,
+        0,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "variables": [
+        null,
+        255,
+        0,
+        252,
+        255,
+        28,
+        178,
+        3,
+        3,
+        64,
+        160,
+        5,
+        6,
+        127,
+        127,
+        0,
+        0,
+        127,
+        127,
+        0,
+        0,
+        127,
+        127,
+        0,
+        0,
+        127,
+        127,
+        0,
+        0,
+        127,
+        127,
+        0,
+        0,
+        127,
+        127,
+        0,
+        0,
+        12
+      ],
+      "actions": {
+        "1": {
+          "event": "00000001",
+          "variables": [
+            3,
+            1,
+            0,
+            0
+          ],
+          "actionId": 1
+        },
+        "2": {
+          "event": "00000002",
+          "variables": [
+            3,
+            1,
+            1,
+            0
+          ],
+          "actionId": 2
+        },
+        "3": {
+          "event": "00000003",
+          "variables": [
+            3,
+            2,
+            2,
+            0
+          ],
+          "actionId": 3
+        },
+        "4": {
+          "event": "00000004",
+          "variables": [
+            3,
+            2,
+            2,
+            0
+          ],
+          "actionId": 4
+        },
+        "5": {
+          "event": "00000005",
+          "variables": [
+            3,
+            2,
+            0,
+            0
+          ],
+          "actionId": 5
+        },
+        "6": {
+          "event": "00000009",
+          "variables": [
+            3,
+            0,
+            0,
+            3
+          ],
+          "actionId": 6
+        },
+        "7": {
+          "event": "02580001",
+          "variables": [
+            3,
+            2,
+            0,
+            0
+          ],
+          "actionId": 7
+        }
+      },
+      "component": "mergDefault"
+    },
+    "512": {
+      "node": 512,
+      "manuf": 165,
+      "module": "cancmd",
+      "flags": 14,
+      "consumer": false,
+      "producer": true,
+      "flim": true,
+      "bootloader": true,
+      "coe": false,
+      "parameters": [
+        20,
+        165,
+        100,
+        10,
+        255,
+        10,
+        144,
+        4,
+        14,
+        3,
+        1,
+        0,
+        8,
+        0,
+        0,
+        196,
+        26,
+        0,
+        0,
+        1,
+        4
+      ],
+      "variables": [
+        null,
+        0,
+        118,
+        7,
+        0,
+        60,
+        96,
+        96,
+        10,
+        3,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        130,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "actions": {},
+      "component": "cancmd"
+    },
+    "600": {
+      "node": 600,
+      "manuf": 165,
+      "module": 5,
+      "flags": 15,
+      "consumer": true,
+      "producer": true,
+      "flim": true,
+      "bootloader": true,
+      "coe": false,
+      "parameters": [
+        20,
+        165,
+        113,
+        5,
+        32,
+        2,
+        9,
+        2,
+        15,
+        1,
+        1,
+        0,
+        8,
+        0,
+        0,
+        226,
+        26,
+        0,
+        0,
+        1,
+        0
+      ],
+      "variables": [
+        null,
+        7,
+        0,
+        0,
+        10,
+        10,
+        0,
+        0,
+        0,
+        0
+      ],
+      "actions": {
+        "1": {
+          "event": "00000009",
+          "variables": [
+            2,
+            0,
+            0
+          ],
+          "actionId": 1
+        }
+      },
+      "component": "mergDefault"
+    },
+    "601": {
+      "node": 601,
+      "manuf": 165,
+      "module": 34,
+      "flags": 13,
+      "consumer": true,
+      "producer": false,
+      "flim": true,
+      "bootloader": true,
+      "coe": false,
+      "parameters": [
+        20,
+        165,
+        65,
+        34,
+        128,
+        2,
+        16,
+        1,
+        13,
+        13,
+        1,
+        0,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "variables": [
+        null,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        50,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "actions": {
+        "1": {
+          "event": "00000003",
+          "variables": [
+            2,
+            1,
+            0
+          ],
+          "actionId": 1
+        },
+        "2": {
+          "event": "00000004",
+          "variables": [
+            2,
+            1,
+            1
+          ],
+          "actionId": 2
+        }
+      },
+      "component": "mergDefault"
+    },
+    "602": {
+      "node": 602,
+      "manuf": 165,
+      "module": 3,
+      "flags": 13,
+      "consumer": true,
+      "producer": false,
+      "flim": true,
+      "bootloader": true,
+      "coe": false,
+      "parameters": [
+        14,
+        165,
+        72,
+        3,
+        128,
+        2,
+        8,
+        2,
+        13,
+        1,
+        1,
+        0,
+        8,
+        0,
+        0
+      ],
+      "variables": [
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        25
+      ],
+      "actions": {
+        "1": {
+          "event": "02580002",
+          "variables": [
+            2,
+            12,
+            8
+          ],
+          "actionId": 1
+        },
+        "2": {
+          "event": "02580003",
+          "variables": [
+            2,
+            3,
+            2
+          ],
+          "actionId": 2
+        },
+        "3": {
+          "event": "00000003",
+          "variables": [
+            2,
+            15,
+            6
+          ],
+          "actionId": 3
+        },
+        "4": {
+          "event": "00000004",
+          "variables": [
+            2,
+            15,
+            9
+          ],
+          "actionId": 4
+        },
+        "5": {
+          "event": "00000006",
+          "variables": [
+            2,
+            15,
+            10
+          ],
+          "actionId": 5
+        }
+      },
+      "component": "mergDefault"
+    },
+    "700": {
+      "node": 700,
+      "manuf": 165,
+      "module": "canpan",
+      "flags": 13,
+      "consumer": true,
+      "producer": false,
+      "flim": true,
+      "bootloader": true,
+      "coe": false,
+      "parameters": [
+        20,
+        165,
+        89,
+        29,
+        128,
+        13,
+        1,
+        1,
+        13,
+        13,
+        1,
+        0,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "variables": [
+        null,
+        1
+      ],
+      "actions": {
+        "1": {
+          "event": "00000001",
+          "variables": [
+            13,
+            1,
+            1,
+            36,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255
+          ],
+          "actionId": 1
+        },
+        "2": {
+          "event": "00000002",
+          "variables": [
+            13,
+            1,
+            5,
+            36,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255
+          ],
+          "actionId": 2
+        },
+        "3": {
+          "event": "00000003",
+          "variables": [
+            13,
+            1,
+            9,
+            52,
+            0,
+            0,
+            0,
+            63,
+            0,
+            0,
+            0,
+            25,
+            0,
+            255
+          ],
+          "actionId": 3
+        },
+        "4": {
+          "event": "00000004",
+          "variables": [
+            13,
+            1,
+            13,
+            52,
+            0,
+            0,
+            0,
+            63,
+            0,
+            0,
+            0,
+            37,
+            0,
+            255
+          ],
+          "actionId": 4
+        },
+        "5": {
+          "event": "00000005",
+          "variables": [
+            13,
+            1,
+            17,
+            52,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            2,
+            0,
+            255
+          ],
+          "actionId": 5
+        },
+        "6": {
+          "event": "00000006",
+          "variables": [
+            13,
+            1,
+            21,
+            52,
+            0,
+            0,
+            0,
+            60,
+            0,
+            0,
+            0,
+            40,
+            0,
+            255
+          ],
+          "actionId": 6
+        },
+        "7": {
+          "event": "00000009",
+          "variables": [
+            13,
+            1,
+            25,
+            36,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255
+          ],
+          "actionId": 7
+        },
+        "8": {
+          "event": "02580008",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0,
+            0,
+            0,
+            8,
+            0,
+            0,
+            255
+          ],
+          "actionId": 8
+        },
+        "9": {
+          "event": "01F4000C",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            96,
+            0,
+            0,
+            0,
+            32,
+            255
+          ],
+          "actionId": 9
+        },
+        "10": {
+          "event": "02580001",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            2,
+            0,
+            255
+          ],
+          "actionId": 10
+        },
+        "11": {
+          "event": "01F4000D",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            255
+          ],
+          "actionId": 11
+        },
+        "12": {
+          "event": "02580002",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            48,
+            0,
+            0,
+            0,
+            32,
+            0,
+            255
+          ],
+          "actionId": 12
+        },
+        "13": {
+          "event": "02580003",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0,
+            0,
+            0,
+            8,
+            0,
+            255
+          ],
+          "actionId": 13
+        },
+        "14": {
+          "event": "02580005",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            16,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255
+          ],
+          "actionId": 14
+        },
+        "15": {
+          "event": "01F40009",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255
+          ],
+          "actionId": 15
+        },
+        "16": {
+          "event": "02580006",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255
+          ],
+          "actionId": 16
+        },
+        "17": {
+          "event": "01F4000A",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255
+          ],
+          "actionId": 17
+        },
+        "18": {
+          "event": "02580007",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255
+          ],
+          "actionId": 18
+        },
+        "19": {
+          "event": "01F4000B",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255
+          ],
+          "actionId": 19
+        }
+      },
+      "component": "mergDefault"
+    },
+    "800": {
+      "node": 800,
+      "manuf": 165,
+      "module": "canpan",
+      "flags": 13,
+      "consumer": true,
+      "producer": false,
+      "flim": true,
+      "bootloader": true,
+      "coe": false,
+      "parameters": [
+        20,
+        165,
+        89,
+        29,
+        128,
+        13,
+        1,
+        1,
+        13,
+        13,
+        1,
+        0,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "variables": [
+        null,
+        1
+      ],
+      "actions": {
+        "1": {
+          "event": "00000001",
+          "variables": [
+            13,
+            1,
+            1,
+            36,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255
+          ],
+          "actionId": 1
+        },
+        "2": {
+          "event": "00000002",
+          "variables": [
+            13,
+            1,
+            5,
+            36,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255
+          ],
+          "actionId": 2
+        },
+        "3": {
+          "event": "00000003",
+          "variables": [
+            13,
+            1,
+            9,
+            52,
+            0,
+            0,
+            0,
+            63,
+            0,
+            0,
+            0,
+            25,
+            0,
+            255
+          ],
+          "actionId": 3
+        },
+        "4": {
+          "event": "00000004",
+          "variables": [
+            13,
+            1,
+            13,
+            52,
+            0,
+            0,
+            0,
+            63,
+            0,
+            0,
+            0,
+            37,
+            0,
+            255
+          ],
+          "actionId": 4
+        },
+        "5": {
+          "event": "00000005",
+          "variables": [
+            13,
+            1,
+            17,
+            52,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            2,
+            0,
+            255
+          ],
+          "actionId": 5
+        },
+        "6": {
+          "event": "00000006",
+          "variables": [
+            13,
+            1,
+            21,
+            52,
+            0,
+            0,
+            0,
+            60,
+            0,
+            0,
+            0,
+            40,
+            0,
+            255
+          ],
+          "actionId": 6
+        },
+        "7": {
+          "event": "00000009",
+          "variables": [
+            13,
+            1,
+            25,
+            36,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255
+          ],
+          "actionId": 7
+        },
+        "8": {
+          "event": "02580008",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0,
+            0,
+            0,
+            8,
+            0,
+            0,
+            255
+          ],
+          "actionId": 8
+        },
+        "9": {
+          "event": "01F4000C",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            96,
+            0,
+            0,
+            0,
+            32,
+            255
+          ],
+          "actionId": 9
+        },
+        "10": {
+          "event": "02580001",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            2,
+            0,
+            255
+          ],
+          "actionId": 10
+        },
+        "11": {
+          "event": "01F4000D",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            255
+          ],
+          "actionId": 11
+        },
+        "12": {
+          "event": "02580002",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            48,
+            0,
+            0,
+            0,
+            32,
+            0,
+            255
+          ],
+          "actionId": 12
+        },
+        "13": {
+          "event": "02580003",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0,
+            0,
+            0,
+            8,
+            0,
+            255
+          ],
+          "actionId": 13
+        },
+        "14": {
+          "event": "02580005",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            16,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255
+          ],
+          "actionId": 14
+        },
+        "15": {
+          "event": "01F40009",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255
+          ],
+          "actionId": 15
+        },
+        "16": {
+          "event": "02580006",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255
+          ],
+          "actionId": 16
+        },
+        "17": {
+          "event": "01F4000A",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255
+          ],
+          "actionId": 17
+        },
+        "18": {
+          "event": "02580007",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255
+          ],
+          "actionId": 18
+        },
+        "19": {
+          "event": "01F4000B",
+          "variables": [
+            13,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            255
+          ],
+          "actionId": 19
+        }
+      },
+      "component": "mergDefault"
+    },
+    "65535": {
+      "node": 65535,
+      "manuf": 165,
+      "module": 9,
+      "flags": 10,
+      "consumer": false,
+      "producer": true,
+      "flim": false,
+      "bootloader": true,
+      "coe": false,
+      "parameters": [
+        255,
+        165,
+        115,
+        9,
+        0,
+        0,
+        0,
+        2,
+        10,
+        1,
+        1
+      ],
+      "variables": [],
+      "actions": {},
+      "component": "mergDefault"
+    }
+  },
+  "events": {
+    "00000002": {
+      "id": "02BC0002",
+      "nodeId": 700,
+      "eventId": 2,
+      "status": "on",
+      "type": "short",
+      "count": 4
+    },
+    "01F4000D": {
+      "id": "01F4000D",
+      "nodeId": 500,
+      "eventId": 13,
+      "status": "off",
+      "type": "long",
+      "count": 9
+    },
+    "00000001": {
+      "id": "02BC0001",
+      "nodeId": 700,
+      "eventId": 1,
+      "status": "on",
+      "type": "short",
+      "count": 4
+    },
+    "00000003": {
+      "id": "02BC0003",
+      "nodeId": 700,
+      "eventId": 3,
+      "status": "on",
+      "type": "short",
+      "count": 4
+    },
+    "02580008": {
+      "id": "02580008",
+      "nodeId": 600,
+      "eventId": 8,
+      "status": "on",
+      "type": "long",
+      "count": 8
+    },
+    "00000004": {
+      "id": "02BC0004",
+      "nodeId": 700,
+      "eventId": 4,
+      "status": "on",
+      "type": "short",
+      "count": 5
+    },
+    "00000005": {
+      "id": "02BC0005",
+      "nodeId": 700,
+      "eventId": 5,
+      "status": "on",
+      "type": "short",
+      "count": 3
+    },
+    "00000006": {
+      "id": "02BC0006",
+      "nodeId": 700,
+      "eventId": 6,
+      "status": "on",
+      "type": "short",
+      "count": 2
+    },
+    "012C0001": {
+      "id": "012C0001",
+      "nodeId": 300,
+      "eventId": 1,
+      "status": "on",
+      "type": "long",
+      "count": 1
+    },
+    "00000009": {
+      "id": "03200009",
+      "nodeId": 800,
+      "eventId": 9,
+      "status": "on",
+      "type": "short",
+      "count": 1
+    },
+    "01F40009": {
+      "id": "01F40009",
+      "nodeId": 500,
+      "eventId": 9,
+      "status": "off",
+      "type": "long",
+      "count": 19
+    },
+    "02580002": {
+      "id": "02580002",
+      "nodeId": 600,
+      "eventId": 2,
+      "status": "on",
+      "type": "long",
+      "count": 4
+    },
+    "02580003": {
+      "id": "02580003",
+      "nodeId": 600,
+      "eventId": 3,
+      "status": "on",
+      "type": "long",
+      "count": 2
+    },
+    "02580004": {
+      "id": "02580004",
+      "nodeId": 600,
+      "eventId": 4,
+      "status": "off",
+      "type": "long",
+      "count": 1
+    },
+    "02580005": {
+      "id": "02580005",
+      "nodeId": 600,
+      "eventId": 5,
+      "status": "on",
+      "type": "long",
+      "count": 7
+    },
+    "02580006": {
+      "id": "02580006",
+      "nodeId": 600,
+      "eventId": 6,
+      "status": "on",
+      "type": "long",
+      "count": 3
+    },
+    "02580007": {
+      "id": "02580007",
+      "nodeId": 600,
+      "eventId": 7,
+      "status": "off",
+      "type": "long",
+      "count": 13
+    },
+    "01F4000A": {
+      "id": "01F4000A",
+      "nodeId": 500,
+      "eventId": 10,
+      "status": "off",
+      "type": "long",
+      "count": 11
+    },
+    "01F4000B": {
+      "id": "01F4000B",
+      "nodeId": 500,
+      "eventId": 11,
+      "status": "off",
+      "type": "long",
+      "count": 7
+    },
+    "01F4000C": {
+      "id": "01F4000C",
+      "nodeId": 500,
+      "eventId": 12,
+      "status": "on",
+      "type": "long",
+      "count": 1
+    },
+    "01F4000E": {
+      "id": "01F4000E",
+      "nodeId": 500,
+      "eventId": 14,
+      "status": "off",
+      "type": "long",
+      "count": 1
+    },
+    "01F4000F": {
+      "id": "01F4000F",
+      "nodeId": 500,
+      "eventId": 15,
+      "status": "off",
+      "type": "long",
+      "count": 1
+    },
+    "01F40010": {
+      "id": "01F40010",
+      "nodeId": 500,
+      "eventId": 16,
+      "status": "off",
+      "type": "long",
+      "count": 1
+    },
+    "02580001": {
+      "id": "02580001",
+      "nodeId": 600,
+      "eventId": 1,
+      "status": "on",
+      "type": "long",
+      "count": 6
+    }
+  }
+}
