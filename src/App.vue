@@ -5,7 +5,7 @@
       app
     >
       <v-list dense>
-        <v-list-item link @click="drawer=null, mainComponent=item.component" v-for="item in menuItems" :key="item.title">
+        <v-list-item link @click="change_display_component(item.component)" v-for="item in menuItems" :key="item.title">
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
@@ -26,7 +26,7 @@
     </v-app-bar>
 
     <v-content>
-      <component v-bind:is="mainComponent"></component>
+      <component v-bind:is="display_component"></component>
     </v-content>
     <v-footer
       color="indigo"
@@ -42,11 +42,15 @@
   import node_list from './components/NodeList'
   import event_list from './components/EventList'
   import raw from './components/Raw'
+  import mergDefault from './components/mergDefault'
+  import mergCANMIO from './components/mergCANMIO'
+  import mergCANPAN from './components/mergCANPAN'
+  import mergCANCMD from './components/mergCANCMD'
 
   export default {
     components:{
       // eslint-disable-next-line
-      hello_world, node_list, event_list, raw
+      hello_world, node_list, event_list, raw, mergDefault, mergCANMIO, mergCANPAN, mergCANCMD
     },
     props: {
       source: String,
@@ -61,7 +65,16 @@
         {title:"Raw", icon:"mdi-home", component:"raw"}
       ]
     }),
+    methods: {
+      change_display_component(component) {
+        this.drawer = null
+        this.$root.$data.display_component = component
+      }
+    },
     computed: {
+      display_component() {
+        return this.$root.$data.display_component
+      },
       layout() {
         return this.$root.$data.layout
         //return this.$store.state.nodes.data

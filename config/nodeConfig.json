@@ -23,7 +23,8 @@
       ],
       "variables": [],
       "actions": {},
-      "component": "mergDefault"
+      "component": "mergDefault",
+      "EvCount" : 0
     },
     "500": {
       "node": 500,
@@ -170,7 +171,8 @@
           "actionId": 7
         }
       },
-      "component": "mergDefault"
+      "component": "mergDefault",
+      "EvCount" : 7
     },
     "512": {
       "node": 512,
@@ -353,7 +355,8 @@
         0
       ],
       "actions": {},
-      "component": "cancmd"
+      "component": "cancmd",
+      "EvCount" : 0
     },
     "600": {
       "node": 600,
@@ -411,7 +414,8 @@
           "actionId": 1
         }
       },
-      "component": "mergDefault"
+      "component": "mergDefault",
+      "EvCount" : 1
     },
     "601": {
       "node": 601,
@@ -485,7 +489,8 @@
           "actionId": 2
         }
       },
-      "component": "mergDefault"
+      "component": "mergDefault",
+      "EvCount" : 2
     },
     "602": {
       "node": 602,
@@ -572,7 +577,8 @@
           "actionId": 5
         }
       },
-      "component": "mergDefault"
+      "component": "mergDefault",
+      "EvCount" : 5
     },
     "700": {
       "node": 700,
@@ -993,7 +999,8 @@
           "actionId": 19
         }
       },
-      "component": "mergDefault"
+      "component": "mergDefault",
+      "EvCount" : 19
     },
     "800": {
       "node": 800,
@@ -1414,7 +1421,8 @@
           "actionId": 19
         }
       },
-      "component": "mergDefault"
+      "component": "mergDefault",
+      "EvCount" : 19
     },
     "65535": {
       "node": 65535,
@@ -1441,7 +1449,8 @@
       ],
       "variables": [],
       "actions": {},
-      "component": "mergDefault"
+      "component": "mergDefault",
+      "EvCount" : 0
     }
   },
   "events": {

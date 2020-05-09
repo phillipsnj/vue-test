@@ -15,7 +15,8 @@ new Vue({
     cbusErrors:[],
     dccErrors:[],
     layout: layout,
-    display_item: "HelloWorld"
+    display_component: "hello_world",
+    selected_node_id: 0
   },
   vuetify,
   render: h => h(App)
