@@ -177,7 +177,7 @@
     "512": {
       "node": 512,
       "manuf": 165,
-      "module": "cancmd",
+      "module": "CANCMD",
       "flags": 14,
       "consumer": false,
       "producer": true,
@@ -355,7 +355,7 @@
         0
       ],
       "actions": {},
-      "component": "cancmd",
+      "component": "mergCANCMD",
       "EvCount" : 0
     },
     "600": {

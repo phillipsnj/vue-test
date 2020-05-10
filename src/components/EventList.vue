@@ -2,14 +2,11 @@
     <v-container>
         <v-card>
             <v-data-table :headers="headers"
-                          :items="events"
+                          :items="Object.values(this.$root.$data.events)"
                           :items-per-page="5"
                           class="elevation-1"
-                          :single-expand="singleExpand"
-                          :expanded.sync="expanded"
                           item-key="id"
-                          :search="search"
-                          show-expand>
+                          :search="search">
 
                 <template v-slot:item.status="{ item }">
                     <v-chip color="green" dark v-if="item.status=='on'">On</v-chip>
@@ -19,8 +16,6 @@
                     <v-toolbar flat>
                         <v-toolbar-title>Events Table</v-toolbar-title>
                         <v-spacer></v-spacer>
-                        <v-switch v-model="singleExpand" label="Single expand" class="mt-2"></v-switch>
-                        <v-spacer></v-spacer>
                         <v-text-field
                                 v-model="search"
                                 append-icon="mdi-magnify"
@@ -28,7 +23,6 @@
                                 single-line
                                 hide-details
                         ></v-text-field>
-                        <v-spacer></v-spacer>
                         <v-dialog v-model="dialog" max-width="500px">
                             <v-card>
                                 <v-card-title>
@@ -45,9 +39,6 @@
                 </template>
                 <template v-slot:item.actions="{ item }">
                     <v-btn color="blue darken-1" text @click="teachEvent(item)">Teach</v-btn>
-                </template>
-                <template v-slot:expanded-item="{ headers, item }">
-                    <td :colspan="headers.length">More info about event {{ item.id }}</td>
                     <v-btn color="blue darken-1" text @click="sendEvent(item.nodeId, item.eventId, item.type, 'On')">On</v-btn>
                     <v-btn color="blue darken-1" text @click="sendEvent(item.nodeId, item.eventId, item.type, 'Off')">Off</v-btn>
                 </template>
@@ -63,8 +54,6 @@
         data: function () {
             return {
                 search: '',
-                expanded: [],
-                singleExpand: false,
                 headers: [
                     {text: 'id', value: 'id'},
                     {text: 'nodeId', value: 'nodeId'},
@@ -72,20 +61,10 @@
                     {text: 'type', value: 'type'},
                     {text: 'status', value: 'status'},
                     {text: 'count', value: 'count'},
-                    {text: 'Actions', value: 'actions', sortable: false },
-                    {text: '', value: 'data-table-expand'}
+                    {text: 'Actions', value: 'actions', sortable: false }
                 ],
                 dialog: false,
                 nodeComponent: 'noModule'
-            }
-        },
-        computed: {
-            events() {
-                return Object.values(this.$root.$data.events)
-                //return this.$store.state.nodes.data
-            },
-            debug() {
-                return this.$root.$data.debug
             }
         },
         methods: {

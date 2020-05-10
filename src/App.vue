@@ -22,7 +22,10 @@
       dark
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title>{{ layout.title }} {{ layout.subTitle }}</v-toolbar-title>
+      <v-toolbar-title>
+        <span class="white--text text--darken-1 font-weight-bold display-1 roboto">{{ this.$root.$data.layout.title }}</span>
+        <span class="font-weight-light text-md-center"> {{ this.$root.$data.layout.subTitle }}</span>
+      </v-toolbar-title>
     </v-app-bar>
 
     <v-content>
@@ -42,6 +45,7 @@
   import node_list from './components/NodeList'
   import event_list from './components/EventList'
   import raw from './components/Raw'
+  import settings from './components/settings'
   import mergDefault from './components/mergDefault'
   import mergCANMIO from './components/mergCANMIO'
   import mergCANPAN from './components/mergCANPAN'
@@ -50,7 +54,7 @@
   export default {
     components:{
       // eslint-disable-next-line
-      hello_world, node_list, event_list, raw, mergDefault, mergCANMIO, mergCANPAN, mergCANCMD
+      hello_world, node_list, event_list, raw, mergDefault, mergCANMIO, mergCANPAN, mergCANCMD, settings
     },
     props: {
       source: String,
@@ -62,6 +66,7 @@
         {title:"Home", icon:"mdi-home", component:"hello_world"},
         {title:"Nodes", icon:"mdi-home", component:"node_list"},
         {title:"Events", icon:"mdi-home", component:"event_list"},
+        {title:"Settings", icon:"mdi-home", component:"settings"},
         {title:"Raw", icon:"mdi-home", component:"raw"}
       ]
     }),

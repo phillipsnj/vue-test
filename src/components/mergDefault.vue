@@ -2,10 +2,6 @@
     <v-container>
         <v-toolbar flat>
             <v-toolbar-title>Default Module Type Page : {{ nodeId }}</v-toolbar-title>
-            <v-spacer></v-spacer>
-            <v-toolbar-items>
-                <!--<v-btn color="success" v-on:click="QNN" pa-3>QNN()</v-btn>-->
-            </v-toolbar-items>
         </v-toolbar>
         <v-tabs>
             <v-tab :key="1">
@@ -23,22 +19,14 @@
             <v-tab-item :key="1">
                 <v-container>
                     <v-row>
-                        <v-flex xs6 md3 pa-3>
-                            <v-text-field label="Manufacturer Id" placeholder="Manufacturer Id" readonly
+                        <v-text-field label="Manufacturer Id" placeholder="Manufacturer Id" readonly
                                           :value=node.parameters[1]></v-text-field>
-                        </v-flex>
-                        <v-flex xs6 md3 pa-3>
-                            <v-text-field label="Module" placeholder="Module" readonly
+                        <v-text-field label="Module" placeholder="Module" readonly
                                           :value=node.module></v-text-field>
-                        </v-flex>
-                        <v-flex xs6 md3 pa-3>
-                            <v-text-field label="Version" placeholder="Version" readonly
+                        <v-text-field label="Version" placeholder="Version" readonly
                                           :value=moduleVersion></v-text-field>
-                        </v-flex>
-                        <v-flex xs6 md3 pa-3>
-                            <v-text-field label="Variables" placeholder="Variables" readonly
+                        <v-text-field label="Variables" placeholder="Variables" readonly
                                           :value=node.parameters[6]></v-text-field>
-                        </v-flex>
                     </v-row>
                     <v-row>
                         <v-flex xs6 md3 pa-3>

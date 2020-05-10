@@ -1,28 +1,37 @@
 <template>
-  <v-container>
-    <v-row class="text-center">
-      <v-col cols="12">
-        <v-flex xs6 md3 pa-3>
-          <v-text-field label="Title"
-                        placeholder="Title"
-                        v-model="title">
-          </v-text-field>
-        </v-flex>
-      </v-col>
-    </v-row>
-  </v-container>
-
+    <v-container>
+        <v-col align="center">
+            <v-row>
+                <v-flex xs12>
+                    <v-img
+                            :src="require('../assets/merg_logo.png')"
+                            class="my-3"
+                            contain
+                            height="200"
+                    ></v-img>
+                </v-flex>
+            </v-row>
+            <v-row align="center">
+                <v-flex mb-4>
+                    <h1 class="display-2 font-weight-bold mb-3">
+                        Web FCU Project
+                    </h1>
+                    <p class="subheading font-weight-regular">
+                        This is a proof of concept for a Web based FCU.
+                        <br>
+                    </p>
+                </v-flex>
+            </v-row>
+        </v-col>
+    </v-container>
 </template>
 
 <script>
-
-  export default {
-    name: 'hello_world',
-    data: function() {
-      return {
-        title : this.$root.$data.layout.title
-      }
-    },
-  }
-
+    export default {
+        data: () => ({})
+    }
 </script>
+
+<style>
+
+</style>
