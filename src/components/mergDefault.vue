@@ -19,63 +19,71 @@
             <v-tab-item :key="1">
                 <v-container>
                     <v-row>
-                        <v-text-field label="Manufacturer Id" placeholder="Manufacturer Id" readonly
+                        <v-card class="xs6 md3 pa-3" flat>
+                            <v-text-field label="Manufacturer Id" placeholder="Manufacturer Id" readonly
                                           :value=node.parameters[1]></v-text-field>
-                        <v-text-field label="Module" placeholder="Module" readonly
+                        </v-card>
+                        <v-card class="xs6 md3 pa-3" flat>
+                            <v-text-field label="Module" placeholder="Module" readonly
                                           :value=node.module></v-text-field>
-                        <v-text-field label="Version" placeholder="Version" readonly
+                        </v-card>
+                        <v-card class="xs6 md3 pa-3" flat>
+                            <v-text-field label="Version" placeholder="Version" readonly
                                           :value=moduleVersion></v-text-field>
-                        <v-text-field label="Variables" placeholder="Variables" readonly
+                        </v-card>
+                        <v-card class="xs6 md3 pa-3" flat>
+                            <v-text-field label="Variables" placeholder="Variables" readonly
                                           :value=node.parameters[6]></v-text-field>
+                        </v-card>
                     </v-row>
                     <v-row>
-                        <v-flex xs6 md3 pa-3>
+                        <v-card class="xs6 md3 pa-3" flat>
                             <v-text-field label="Event Variables" placeholder="Event Variables" readonly
                                           :value=node.parameters[5]></v-text-field>
-                        </v-flex>
-                        <v-flex xs6 md3 pa-3>
+                        </v-card>
+                        <v-card class="xs6 md3 pa-3" flat>
                             <v-text-field label="Supported Events" placeholder="Supported Events" readonly
                                           :value=node.parameters[4]></v-text-field>
-                        </v-flex>
-                        <v-flex xs6 md3 pa-3>
+                        </v-card>
+                        <v-card class="xs6 md3 pa-3" flat>
                             <v-text-field label="Consumer" placeholder="Consumer" readonly
                                           :value=node.consumer></v-text-field>
-                        </v-flex>
-                        <v-flex xs6 md3 pa-3>
+                        </v-card>
+                        <v-card class="xs6 md3 pa-3" flat>
                             <v-text-field label="Producer" placeholder="Producer" readonly
                                           :value=node.producer></v-text-field>
-                        </v-flex>
+                        </v-card>
                     </v-row>
                     <v-row>
-                        <v-flex xs6 md3 pa-3>
+                        <v-card class="xs6 md3 pa-3" flat>
                             <v-text-field label="Bootloader" placeholder="Bootloader" readonly
                                           :value=node.bootloader></v-text-field>
-                        </v-flex>
-                        <v-flex xs6 md3 pa-3>
+                        </v-card>
+                        <v-card class="xs6 md3 pa-3" flat>
                             <v-text-field label="Consume own events" placeholder="Consume own events"
                                           readonly
                                           :value=node.coe></v-text-field>
-                        </v-flex>
-                        <v-flex xs6 md3 pa-3>
+                        </v-card>
+                        <v-card class="xs6 md3 pa-3" flat>
                             <v-text-field label="Parameters" placeholder="Parameters" readonly
                                           :value=node.parameters[0]></v-text-field>
-                        </v-flex>
+                        </v-card>
                     </v-row>
 
                 </v-container>
                 <h3>Flags</h3>
                 <v-container>
                     <v-row>
-                        <v-flex xs6 md3 pa-3>
+                        <v-card class="xs6 md3 pa-3" flat>
                             <v-text-field label="Parameter Flags" placeholder="Flags"
                                           readonly
                                           :value=node.flags></v-text-field>
-                        </v-flex>
-                        <v-flex xs6 md3 pa-3>
+                        </v-card>
+                        <v-card class="xs6 md3 pa-3" flat>
                             <v-text-field label="Variables Flags" placeholder="Flags"
                                           readonly
                                           :value=node.parameters[8]></v-text-field>
-                        </v-flex>
+                        </v-card>
                     </v-row>
                 </v-container>
             </v-tab-item>
@@ -217,7 +225,7 @@
         //props: ['node'],
         data: function () {
             return {
-                nodeId : 0,
+                nodeId: 0,
                 eventDialog: false,
                 editedEvent: {event: "0", variables: [], actionId: 1},
                 SelectedVariable: 1,

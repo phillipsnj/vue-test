@@ -74,14 +74,21 @@
                 <h3>Flags</h3>
                 <v-container>
                     <v-row>
-                        <v-text-field label="Parameter Flags" placeholder="Flags"
-                                      readonly
-                                      :value=node.flags></v-text-field>
-                        <v-text-field label="Variables Flags" placeholder="Flags"
-                                      readonly
-                                      :value=node.parameters[8]></v-text-field>
+                        <v-card class="xs6 md3 pa-3" flat>
+                            <v-text-field label="Parameter Flags" placeholder="Flags"
+                                          readonly
+                                          :value=node.flags></v-text-field>
+                        </v-card>
+                        <v-card class="xs6 md3 pa-3" flat>
+                            <v-text-field label="Variables Flags" placeholder="Flags"
+                                          readonly
+                                          :value=node.parameters[8]></v-text-field>
+                        </v-card>
                     </v-row>
                 </v-container>
+                <v-layout v-if="debug">
+                    Node Parameters : {{ node.parameters }}
+                </v-layout>
             </v-tab-item>
             <v-tab-item :key="2">
                 <v-container>
@@ -98,7 +105,7 @@
                         <v-card class="pa-2" flat min-width="200">
                             <v-checkbox
                                     v-model="userFlags"
-                                    :label="`Silent`"
+                                    label="Silent"
                                     :value=1
                                     @change="updateNV(node.node,2,sumArray(userFlags))"
                             ></v-checkbox>
@@ -106,7 +113,7 @@
                         <v-card class="pa-2" flat min-width="200">
                             <v-checkbox min-width="100"
                                         v-model="userFlags"
-                                        :label="`Steal`"
+                                        label="Steal"
                                         :value=2
                                         @change="updateNV(node.node,2,sumArray(userFlags))"
                             ></v-checkbox>
@@ -335,7 +342,7 @@
                         </v-card>
                     </v-row>
                     <v-layout v-if="debug">
-                        {{ node.variables }}
+                        Node Variables {{ node.variables }}
                     </v-layout>
                 </v-container>
             </v-tab-item>
@@ -430,16 +437,6 @@
                 </v-layout>
             </v-tab-item>
         </v-tabs>
-        <div v-if="debug">
-            <h3>Raw Node Data</h3>
-            <div>
-                <p>{{ node }}</p>
-            </div>
-            <h3>Raw Edited Event</h3>
-            <div>
-                <p>{{ editedEvent }}</p>
-            </div>
-        </div>
     </v-container>
 
 </template>
