@@ -15,6 +15,10 @@
         <v-chip color="amber" dark v-if="item.flim">Flim</v-chip>
         <v-chip color="green" dark v-else>Slim</v-chip>
       </template>
+      <template v-slot:item.status="{ item }">
+        <v-chip color="green" dark v-if="item.status">Ok</v-chip>
+        <v-chip color="red" dark v-else>Error</v-chip>
+      </template>
       <template v-slot:item.actions="{ item }">
         <v-btn color="blue darken-1" text @click="editNode(item)" outlined>Edit</v-btn>
       </template>
@@ -35,6 +39,7 @@
           { text: 'module', value: 'module' },
           { text: 'flim', value: 'flim' },
           { text: 'flags', value: 'flags' },
+          { text: 'status', value: 'status' },
           { text: 'component', value: 'component' },
           {text: 'Actions', value: 'actions', sortable: false }
         ],
