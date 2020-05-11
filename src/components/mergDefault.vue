@@ -20,30 +20,26 @@
                 <NodeParameters v-bind:node="node"></NodeParameters>
             </v-tab-item>
             <v-tab-item :key="2">
-                <v-layout row wrap>
-                    <v-layout>
-                        <v-flex xs12 md4 pa-3>
-                            <v-select
-                                    v-model="SelectedVariable"
-                                    :items="VariableIndexes"
-                                    label="Variable"
-                                    @change="getVariable(SelectedVariable)"
-                            ></v-select>
-                        </v-flex>
-                        <v-flex xs12 sm6 md3 pa-3>
-                            <v-text-field
-                                    label="Value"
-                                    v-model="node.variables[SelectedVariable]"
-                                    @change="updateNV(node.node,SelectedVariable,node.variables[SelectedVariable])"
-                            ></v-text-field>
-                        </v-flex>
-
-                    </v-layout>
-
-                    <v-layout v-if="debug">
-                        {{ node.variables }}
-                    </v-layout>
-                </v-layout>
+                <v-row wrap>
+                    <v-card class="pa-2" flat min-width="200">
+                        <v-select
+                                v-model="SelectedVariable"
+                                :items="VariableIndexes"
+                                label="Variable"
+                                @change="getVariable(SelectedVariable)"
+                        ></v-select>
+                    </v-card>
+                    <v-card class="pa-2" flat min-width="200">
+                        <v-text-field
+                                label="Value"
+                                v-model="node.variables[SelectedVariable]"
+                                @change="updateNV(node.node,SelectedVariable,node.variables[SelectedVariable])"
+                        ></v-text-field>
+                    </v-card>
+                </v-row>
+                <v-row v-if="debug">
+                    {{ node.variables }}
+                </v-row>
             </v-tab-item>
             <v-tab-item :key="3" v-if="node.EvCount > 0">
                 <v-data-table

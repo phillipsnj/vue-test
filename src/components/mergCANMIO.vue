@@ -20,75 +20,7 @@
                 Debug
             </v-tab>
             <v-tab-item :key="1">
-                <v-container>
-                    <v-row>
-                        <v-card class="xs6 md3 pa-3" flat>
-                            <v-text-field label="Manufacturer Id" placeholder="Manufacturer Id" readonly
-                                          :value=node.parameters[1]></v-text-field>
-                        </v-card>
-                        <v-card class="xs6 md3 pa-3" flat>
-                            <v-text-field label="Module" placeholder="Module" readonly
-                                          :value=node.module></v-text-field>
-                        </v-card>
-                        <v-card class="xs6 md3 pa-3" flat>
-                            <v-text-field label="Version" placeholder="Version" readonly
-                                          :value=moduleVersion></v-text-field>
-                        </v-card>
-                        <v-card class="xs6 md3 pa-3" flat>
-                            <v-text-field label="Variables" placeholder="Variables" readonly
-                                          :value=node.parameters[6]></v-text-field>
-                        </v-card>
-                    </v-row>
-                    <v-row>
-                        <v-card class="xs6 md3 pa-3" flat>
-                            <v-text-field label="Event Variables" placeholder="Event Variables" readonly
-                                          :value=node.parameters[5]></v-text-field>
-                        </v-card>
-                        <v-card class="xs6 md3 pa-3" flat>
-                            <v-text-field label="Supported Events" placeholder="Supported Events" readonly
-                                          :value=node.parameters[4]></v-text-field>
-                        </v-card>
-                        <v-card class="xs6 md3 pa-3" flat>
-                            <v-text-field label="Consumer" placeholder="Consumer" readonly
-                                          :value=node.consumer></v-text-field>
-                        </v-card>
-                        <v-card class="xs6 md3 pa-3" flat>
-                            <v-text-field label="Producer" placeholder="Producer" readonly
-                                          :value=node.producer></v-text-field>
-                        </v-card>
-                    </v-row>
-                    <v-row>
-                        <v-card class="xs6 md3 pa-3" flat>
-                            <v-text-field label="Bootloader" placeholder="Bootloader" readonly
-                                          :value=node.bootloader></v-text-field>
-                        </v-card>
-                        <v-card class="xs6 md3 pa-3" flat>
-                            <v-text-field label="Consume own events" placeholder="Consume own events"
-                                          readonly
-                                          :value=node.coe></v-text-field>
-                        </v-card>
-                        <v-card class="xs6 md3 pa-3" flat>
-                            <v-text-field label="Parameters" placeholder="Parameters" readonly
-                                          :value=node.parameters[0]></v-text-field>
-                        </v-card>
-                    </v-row>
-
-                </v-container>
-                <h3>Flags</h3>
-                <v-container>
-                    <v-row>
-                        <v-card class="xs6 md3 pa-3" flat>
-                            <v-text-field label="Parameter Flags" placeholder="Flags"
-                                          readonly
-                                          :value=node.flags></v-text-field>
-                        </v-card>
-                        <v-card class="xs6 md3 pa-3" flat>
-                            <v-text-field label="Variables Flags" placeholder="Flags"
-                                          readonly
-                                          :value=node.parameters[8]></v-text-field>
-                        </v-card>
-                    </v-row>
-                </v-container>
+                <NodeParameters v-bind:node="node"></NodeParameters>
             </v-tab-item>
             <v-tab-item :key="2">
                 <v-container>
@@ -523,11 +455,16 @@
 </template>
 
 <script>
+    import NodeParameters from './NodeParameters'
     import {nodeMixin} from '../mixins/nodeMixin.js'
 
     export default {
         name: "mergDefault",
         mixins: [nodeMixin],
+        components: {
+            // eslint-disable-next-line
+            NodeParameters
+        },
         data: function () {
             return {
                 SelectedChannel: 1,
