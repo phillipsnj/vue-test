@@ -351,7 +351,7 @@
             return {
                 nodeId: 0,
                 eventDialog: false,
-                editedEvent: {event: "0", variables: [], actionId: 1},
+                editedEvent: {event: "0", variables: [0,0,0,0,0,0,0,0,0,0], actionId: 1},
                 SelectedVariable: 1,
                 SelectedEvent: 0,
                 SelectedEventVariable: 1,
@@ -396,15 +396,15 @@
                 console.log(`actionVariable1() : ${this.$root.$data.nodes[this.nodeId].actions[this.editedEvent.actionId].variables[5]}`)
                 this.actionArray1 = this.getArray(this.$root.$data.nodes[this.nodeId].actions[this.editedEvent.actionId].variables[5])
                 this.reverseArray1 = this.getArray(this.$root.$data.nodes[this.nodeId].actions[this.editedEvent.actionId].variables[9])
-            }
-            /*actionVariable1() {
+            },
+            actionVariable1() {
                 // eslint-disable-next-line no-console
                 console.log(`actionVariable1() : ${this.$root.$data.nodes[this.nodeId].variables[5]}`)
                 this.actionArray1 = this.getArray(this.$root.$data.nodes[this.nodeId].actions[this.editedEvent.actionId].variables[5])
             },
             reverseVariable1() {
                 this.reverseArray1 = this.getArray(this.$root.$data.nodes[this.nodeId].actions[this.editedEvent.actionId].variables[9])
-            }*/
+            }
         },
         computed: {
             debug: function () {
@@ -425,13 +425,13 @@
             },
             actionVariable1: function () {
                 // eslint-disable-next-line no-console
-                console.log(`actionVariable1 : ${this.$root.$data.nodes[this.nodeId].actions[this.editedEvent.actionId].variables[5]}`)
-                return this.$root.$data.nodes[this.nodeId].actions[this.editedEvent.actionId].variables[5]
+                console.log(`actionVariable1 : ${this.$root.$data.nodes[this.$root.$data.selected_node_id].actions[this.editedEvent.actionId].variables[5]}`)
+                return this.$root.$data.nodes[this.$root.$data.selected_node_id].actions[this.editedEvent.actionId].variables[5]
             },
             reverseVariable1: function () {
                 // eslint-disable-next-line no-console
-                console.log(`reverseVariable1 : ${this.$root.$data.nodes[this.nodeId].actions[this.editedEvent.actionId].variables[9]}`)
-                return this.$root.$data.nodes[this.nodeId].actions[this.editedEvent.actionId].variables[9]
+                console.log(`reverseVariable1 : ${this.$root.$data.nodes[this.$root.$data.selected_node_id].actions[this.editedEvent.actionId].variables[9]}`)
+                return this.$root.$data.nodes[this.$root.$data.selected_node_id].actions[this.editedEvent.actionId].variables[9]
             }
         },
         methods: {
