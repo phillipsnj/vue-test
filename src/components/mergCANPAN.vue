@@ -96,124 +96,136 @@
                                                 </v-col>
                                             </v-row>
                                             <v-row>
-                                                <v-card outlined>
-                                                    <v-card-title>Button Action (3)</v-card-title>
-                                                    <v-card-text>
-                                                        <v-radio-group
-                                                                v-model="node.actions[editedEvent.actionId].variables[3]"
-                                                                :mandatory="true"
-                                                                @change="updateEV(node.node,
+                                                <v-col cols="12" sm="6" md="4">
+                                                    <v-card outlined>
+                                                        <v-card-title>Button Action (3)</v-card-title>
+                                                        <v-card-text>
+                                                            <v-radio-group
+                                                                    v-model="node.actions[editedEvent.actionId].variables[3]"
+                                                                    :mandatory="true"
+                                                                    @change="updateEV(node.node,
                                                                         node.actions[editedEvent.actionId].event,
                                                                         node.actions[editedEvent.actionId].actionId,
                                                                         3,
                                                                         parseInt(node.actions[editedEvent.actionId].variables[3]))"
-                                                        >
-                                                            <v-radio label="On/Off" :value="1"></v-radio>
-                                                            <v-radio label="Off/On" :value="3"></v-radio>
-                                                            <v-radio label="On Only" :value="4"></v-radio>
-                                                            <v-radio label="Off Only" :value="6"></v-radio>
-                                                            <v-radio label="On/Off Toggle" :value="8"></v-radio>
-                                                        </v-radio-group>
-                                                    </v-card-text>
-                                                </v-card>
-                                                <v-card outlined>
-                                                    <v-card-title>Actions for all LEDs (13)</v-card-title>
-                                                    <v-card-text>
-                                                        <v-radio-group
-                                                                v-model="node.actions[editedEvent.actionId].variables[13]"
-                                                                :mandatory="true"
-                                                                @change="updateEV(node.node,
+                                                            >
+                                                                <v-radio label="On/Off" :value="1"></v-radio>
+                                                                <v-radio label="Off/On" :value="3"></v-radio>
+                                                                <v-radio label="On Only" :value="4"></v-radio>
+                                                                <v-radio label="Off Only" :value="6"></v-radio>
+                                                                <v-radio label="On/Off Toggle" :value="8"></v-radio>
+                                                            </v-radio-group>
+                                                        </v-card-text>
+                                                    </v-card>
+                                                </v-col>
+                                                <v-col cols="12" sm="6" md="4">
+                                                    <v-card outlined>
+                                                        <v-card-title>Actions for all LEDs (13)</v-card-title>
+                                                        <v-card-text>
+                                                            <v-radio-group
+                                                                    v-model="node.actions[editedEvent.actionId].variables[13]"
+                                                                    :mandatory="true"
+                                                                    @change="updateEV(node.node,
                                                                         node.actions[editedEvent.actionId].event,
                                                                         node.actions[editedEvent.actionId].actionId,
                                                                         13,
                                                                         parseInt(node.actions[editedEvent.actionId].variables[13]))"
-                                                        >
-                                                            <v-radio label="On/Off" :value="255"></v-radio>
-                                                            <v-radio label="On Only" :value="254"></v-radio>
-                                                            <v-radio label="Off Only" :value="253"></v-radio>
-                                                            <v-radio label="Flash" :value="252"></v-radio>
-                                                        </v-radio-group>
-                                                    </v-card-text>
-                                                </v-card>
+                                                            >
+                                                                <v-radio label="On/Off" :value="255"></v-radio>
+                                                                <v-radio label="On Only" :value="254"></v-radio>
+                                                                <v-radio label="Off Only" :value="253"></v-radio>
+                                                                <v-radio label="Flash" :value="252"></v-radio>
+                                                            </v-radio-group>
+                                                        </v-card-text>
+                                                    </v-card>
+                                                </v-col>
                                             </v-row>
                                             <v-row>
-                                                <v-card outlined>
-                                                    <v-card-title>LED 1</v-card-title>
-                                                    <v-card-text>
+                                                <v-col cols="12" sm="6" md="4">
+                                                    <v-card outlined>
+                                                        <v-card-title>LED 1</v-card-title>
+                                                        <v-card-text>
 
-                                                        <v-checkbox
-                                                                v-model="actionArray1"
-                                                                label="Use"
-                                                                :value=1
-                                                                @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
+                                                            <v-checkbox
+                                                                    v-model="actionArray1"
+                                                                    label="Use"
+                                                                    :value=1
+                                                                    @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
                                                       5, sumArray(actionArray1))"
-                                                        ></v-checkbox>
-                                                        <v-checkbox
-                                                                v-model="reverseArray1"
-                                                                label="Reverse"
-                                                                :value=1
-                                                                @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
+                                                            ></v-checkbox>
+                                                            <v-checkbox
+                                                                    v-model="reverseArray1"
+                                                                    label="Reverse"
+                                                                    :value=1
+                                                                    @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
                                                       9, sumArray(reverseArray1))"
-                                                        ></v-checkbox>
-                                                    </v-card-text>
-                                                </v-card>
-                                                <v-card outlined>
-                                                    <v-card-title>LED 2</v-card-title>
-                                                    <v-card-text>
-                                                        <v-checkbox
-                                                                v-model="actionArray1"
-                                                                label="Use"
-                                                                :value=2
-                                                                @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
+                                                            ></v-checkbox>
+                                                        </v-card-text>
+                                                    </v-card>
+                                                </v-col>
+                                                <v-col cols="12" sm="6" md="4">
+                                                    <v-card outlined>
+                                                        <v-card-title>LED 2</v-card-title>
+                                                        <v-card-text>
+                                                            <v-checkbox
+                                                                    v-model="actionArray1"
+                                                                    label="Use"
+                                                                    :value=2
+                                                                    @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
                                                       5, sumArray(actionArray1))"
-                                                        ></v-checkbox>
-                                                        <v-checkbox
-                                                                v-model="reverseArray1"
-                                                                label="Reverse"
-                                                                :value=2
-                                                                @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
+                                                            ></v-checkbox>
+                                                            <v-checkbox
+                                                                    v-model="reverseArray1"
+                                                                    label="Reverse"
+                                                                    :value=2
+                                                                    @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
                                                       9, sumArray(reverseArray1))"
-                                                        ></v-checkbox>
-                                                    </v-card-text>
-                                                </v-card>
-                                                <v-card outlined>
-                                                    <v-card-title>LED 3</v-card-title>
-                                                    <v-card-text>
-                                                        <v-checkbox
-                                                                v-model="actionArray1"
-                                                                label="Use"
-                                                                :value=4
-                                                                @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
+                                                            ></v-checkbox>
+                                                        </v-card-text>
+                                                    </v-card>
+                                                </v-col>
+                                                <v-col cols="12" sm="6" md="4">
+                                                    <v-card outlined>
+                                                        <v-card-title>LED 3</v-card-title>
+                                                        <v-card-text>
+                                                            <v-checkbox
+                                                                    v-model="actionArray1"
+                                                                    label="Use"
+                                                                    :value=4
+                                                                    @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
                                                       5, sumArray(actionArray1))"
-                                                        ></v-checkbox>
-                                                        <v-checkbox
-                                                                v-model="reverseArray1"
-                                                                label="Reverse"
-                                                                :value=4
-                                                                @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
+                                                            ></v-checkbox>
+                                                            <v-checkbox
+                                                                    v-model="reverseArray1"
+                                                                    label="Reverse"
+                                                                    :value=4
+                                                                    @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
                                                       9, sumArray(reverseArray1))"
-                                                        ></v-checkbox>
-                                                    </v-card-text>
-                                                </v-card>
-                                                <v-card outlined>
-                                                    <v-card-title>LED 4</v-card-title>
-                                                    <v-card-text>
-                                                        <v-checkbox
-                                                                v-model="actionArray1"
-                                                                label="Use"
-                                                                :value=8
-                                                                @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
+                                                            ></v-checkbox>
+                                                        </v-card-text>
+                                                    </v-card>
+                                                </v-col>
+                                                <v-col cols="12" sm="6" md="4">
+                                                    <v-card outlined>
+                                                        <v-card-title>LED 4</v-card-title>
+                                                        <v-card-text>
+                                                            <v-checkbox
+                                                                    v-model="actionArray1"
+                                                                    label="Use"
+                                                                    :value=8
+                                                                    @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
                                                       5, sumArray(actionArray1))"
-                                                        ></v-checkbox>
-                                                        <v-checkbox
-                                                                v-model="reverseArray1"
-                                                                label="Reverse"
-                                                                :value=8
-                                                                @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
+                                                            ></v-checkbox>
+                                                            <v-checkbox
+                                                                    v-model="reverseArray1"
+                                                                    label="Reverse"
+                                                                    :value=8
+                                                                    @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
                                                       9, sumArray(reverseArray1))"
-                                                        ></v-checkbox>
-                                                    </v-card-text>
-                                                </v-card>
+                                                            ></v-checkbox>
+                                                        </v-card-text>
+                                                    </v-card>
+                                                </v-col>
                                             </v-row>
                                             <v-row>
                                                 {{ actionArray1 }} :: {{ reverseArray1 }}
