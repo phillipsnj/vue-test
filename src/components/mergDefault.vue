@@ -2,6 +2,8 @@
     <v-container>
         <v-toolbar flat>
             <v-toolbar-title>Default Module Type Page : {{ nodeId }}</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <NodeVariable v-bind:node="nodeId" variable="3"></NodeVariable>
         </v-toolbar>
         <v-tabs>
             <v-tab :key="1">
@@ -149,13 +151,14 @@
 <script>
     import NodeParameters from './NodeParameters'
     import {nodeMixin} from '../mixins/nodeMixin.js'
+    import NodeVariable from './NodeVariable'
 
     export default {
         mixins: [nodeMixin],
         name: "mergDefault",
         components: {
             // eslint-disable-next-line
-            NodeParameters
+            NodeParameters, NodeVariable
         },
         //props: ['node'],
         data: function () {
