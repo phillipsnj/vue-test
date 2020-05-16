@@ -23,8 +23,8 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title>
-        <span class="white--text text--darken-1 font-weight-bold display-1 roboto">{{ this.$root.$data.layout.title }}</span>
-        <span class="font-weight-light text-md-center"> {{ this.$root.$data.layout.subTitle }}</span>
+        <span class="white--text text--darken-1 font-weight-bold display-1 roboto">{{ this.$store.state.layout.title }}</span>
+        <span class="font-weight-light text-md-center"> {{ $store.state.layout.subTitle }}</span>
       </v-toolbar-title>
     </v-app-bar>
 
@@ -73,19 +73,19 @@
     methods: {
       change_display_component(component) {
         this.drawer = null
-        this.$root.$data.display_component = component
+        this.$store.state.display_component = component
       }
     },
     computed: {
       display_component() {
-        return this.$root.$data.display_component
+        return this.$store.state.display_component
       },
       layout() {
-        return this.$root.$data.layout
+        return this.$store.state.layout
         //return this.$store.state.nodes.data
       },
       debug() {
-        return this.$root.$data.debug
+        return this.$store.state.debug
       }
     }
   }

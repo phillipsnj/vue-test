@@ -4,8 +4,6 @@
                 :label="label"
                 v-model="variableLocal"
                 outlined
-                @change="updateNV"
-                :readonly="isReadonly"
         >
         </v-text-field>
     </v-card>
@@ -13,15 +11,15 @@
 
 <script>
     export default {
-        name: "NodeVariable",
+        name: "NodeEventVariable",
         data: () => ({
             label: "",
             variableLocal: 0,
             isReadonly : false
         }),
-        props: ['node', 'variable', 'name', 'readonly'],
+        props: ['node', 'action', 'variable', 'name', 'readonly'],
         mounted() {
-            this.variableLocal = this.$store.state.nodes[this.node].variables[this.variable]
+            this.variableLocal = this.$store.state.nodes[this.node].actions[this.action].variables[this.variable]
             if (this.name) {
                 this.label = this.name
             } else {
@@ -35,21 +33,22 @@
         },
         watch: {
             variableValue() {
-                this.variableLocal = this.$store.state.nodes[this.node].variables[this.variable]
+                this.variableLocal = this.$store.state.nodes[this.node].actions[this.action].variables[this.variable]
             }
         },
         computed: {
             variableValue: function() {
-                return this.$store.state.nodes[this.node].variables[this.variable]
+                return this.$store.state.nodes[this.node].actions[this.action].variables[this.variable]
             }
         },
         methods: {
             updateNV: function () {
                 let output = {}
                 output['nodeId'] = this.node
+                output['actonId'] = this.action
                 output['variableId'] = this.variable
                 output['variableValue'] = this.variableLocal
-                this.$store.commit('UPDATE_NODE_VARIABLE', output)
+                this.$store.commit('UPDATE_NODE_EVENT_VARIABLE', output)
             }
         }
     }

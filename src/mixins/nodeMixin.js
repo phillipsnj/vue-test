@@ -39,15 +39,15 @@ export const nodeMixin = {
         /*if (this.node.EvCount > 0) {
             this.$socket.emit('NERD', {"nodeId": this.nodeId})
         }*/
-        this.nodeId = this.$root.$data.selected_node_id
+        this.nodeId = this.$store.state.selected_node_id
         console.log(`Mounted Completed: ${this.nodeId} `)
     },
     computed: {
         debug: function () {
-            return this.$root.$data.debug
+            return this.$store.state.debug
         },
         node: function () {
-            return this.$root.$data.nodes[this.$root.$data.selected_node_id]
+            return this.$store.state.nodes[this.$store.state.selected_node_id]
         },
         moduleVersion: function () {
             return `${this.node.parameters[7]}.${String.fromCharCode(this.node.parameters[2])}`

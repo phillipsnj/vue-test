@@ -3,7 +3,6 @@
         <v-toolbar flat>
             <v-toolbar-title>Default Module Type Page : {{ nodeId }}</v-toolbar-title>
             <v-spacer></v-spacer>
-            <NodeVariable v-bind:node="nodeId" variable="1" name="Manuf Code"></NodeVariable>
         </v-toolbar>
         <v-tabs>
             <v-tab :key="1">
@@ -22,22 +21,8 @@
                 <NodeParameters v-bind:node="node"></NodeParameters>
             </v-tab-item>
             <v-tab-item :key="2">
-                <v-row wrap>
-                    <v-card class="pa-2" flat min-width="200">
-                        <v-select
-                                v-model="SelectedVariable"
-                                :items="VariableIndexes"
-                                label="Variable"
-                                @change="getVariable(SelectedVariable)"
-                        ></v-select>
-                    </v-card>
-                    <v-card class="pa-2" flat min-width="200">
-                        <v-text-field
-                                label="Value"
-                                v-model="node.variables[SelectedVariable]"
-                                @change="updateNV(node.node,SelectedVariable,node.variables[SelectedVariable])"
-                        ></v-text-field>
-                    </v-card>
+                <v-row>
+                    <NodeVariable v-bind:node="nodeId" v-bind:variable="n" v-for="n in node.parameters[6]" :key="n"></NodeVariable>
                 </v-row>
                 <v-row v-if="debug">
                     {{ node.variables }}
@@ -80,6 +65,9 @@
                                                     <v-text-field v-model="editedEvent.actionId"
                                                                   label="actionId"></v-text-field>
                                                 </v-col>
+                                            </v-row>
+                                            <v-row>
+                                                <NodeEventVariable v-bind:node="nodeId" v-bind:action="editedEvent.actionId" v-bind:variable="n" v-for="n in node.parameters[5]" :key="n"></NodeEventVariable>
                                             </v-row>
                                             <v-row v-for="n in node.parameters[5]" :key="n" dense>
                                                 <v-col cols="12" sm="6" md="4">
@@ -152,13 +140,14 @@
     import NodeParameters from './NodeParameters'
     import {nodeMixin} from '../mixins/nodeMixin.js'
     import NodeVariable from './NodeVariable'
+    import NodeEventVariable from './NodeEventVariable'
 
     export default {
         mixins: [nodeMixin],
         name: "mergDefault",
         components: {
             // eslint-disable-next-line
-            NodeParameters, NodeVariable
+            NodeParameters, NodeVariable, NodeEventVariable
         },
         //props: ['node'],
         data: function () {
