@@ -4,6 +4,7 @@
                 :label="label"
                 v-model="variableLocal"
                 outlined
+                :readonly="isReadonly"
         >
         </v-text-field>
     </v-card>

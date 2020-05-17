@@ -96,11 +96,7 @@
     },
     mixins: [nodeMixin],
     data: function() {
-      return {
-        userFlags: [],
-        operationFlags: [],
-        debugFlags: []
-      }
+      return {}
     }
   }
 

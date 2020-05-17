@@ -79,22 +79,14 @@
                                                 </v-row>
 
                                                 <v-row>
-                                                    <v-col cols="12" sm="6" md="4">
-                                                        <v-text-field
-                                                                label="Event Type (1)"
-                                                                v-model="node.actions[editedEvent.actionId].variables[1]"
-                                                                readonly
-                                                        >
-                                                        </v-text-field>
-                                                    </v-col>
-                                                    <v-col cols="12" sm="6" md="4">
-                                                        <v-text-field
-                                                                label="Switch Number (2)"
-                                                                v-model="node.actions[editedEvent.actionId].variables[2]"
-                                                                readonly
-                                                        >
-                                                        </v-text-field>
-                                                    </v-col>
+                                                    <NodeEventVariable v-bind:node="nodeId"
+                                                                       v-bind:action="editedEvent.actionId"
+                                                                       v-bind:variable="1" name="Event Type (1)"
+                                                                       readonly="true"></NodeEventVariable>
+                                                    <NodeEventVariable v-bind:node="nodeId"
+                                                                       v-bind:action="editedEvent.actionId"
+                                                                       v-bind:variable="2" name="Switch Number (2)"
+                                                                       readonly="true"></NodeEventVariable>
                                                 </v-row>
                                                 <v-row>
                                                     <v-col cols="12" sm="6" md="4">
@@ -142,95 +134,27 @@
                                                     </v-col>
                                                 </v-row>
                                                 <v-row>
-                                                    <v-col cols="12" sm="6" md="4">
-                                                        <v-card outlined>
-                                                            <v-card-title>LED 1</v-card-title>
-                                                            <v-card-text>
 
-                                                                <v-checkbox
-                                                                        v-model="actionArray1"
-                                                                        label="Use"
-                                                                        :value=1
-                                                                        @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
-                                                      5, sumArray(actionArray1))"
-                                                                ></v-checkbox>
-                                                                <v-checkbox
-                                                                        v-model="reverseArray1"
-                                                                        label="Reverse"
-                                                                        :value=1
-                                                                        @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
-                                                      9, sumArray(reverseArray1))"
-                                                                ></v-checkbox>
-                                                            </v-card-text>
-                                                        </v-card>
-                                                    </v-col>
-                                                    <v-col cols="12" sm="6" md="4">
-                                                        <v-card outlined>
-                                                            <v-card-title>LED 2</v-card-title>
-                                                            <v-card-text>
-                                                                <v-checkbox
-                                                                        v-model="actionArray1"
-                                                                        label="Use"
-                                                                        :value=2
-                                                                        @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
-                                                      5, sumArray(actionArray1))"
-                                                                ></v-checkbox>
-                                                                <v-checkbox
-                                                                        v-model="reverseArray1"
-                                                                        label="Reverse"
-                                                                        :value=2
-                                                                        @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
-                                                      9, sumArray(reverseArray1))"
-                                                                ></v-checkbox>
-                                                            </v-card-text>
-                                                        </v-card>
-                                                    </v-col>
-                                                    <v-col cols="12" sm="6" md="4">
-                                                        <v-card outlined>
-                                                            <v-card-title>LED 3</v-card-title>
-                                                            <v-card-text>
-                                                                <v-checkbox
-                                                                        v-model="actionArray1"
-                                                                        label="Use"
-                                                                        :value=4
-                                                                        @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
-                                                      5, sumArray(actionArray1))"
-                                                                ></v-checkbox>
-                                                                <v-checkbox
-                                                                        v-model="reverseArray1"
-                                                                        label="Reverse"
-                                                                        :value=4
-                                                                        @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
-                                                      9, sumArray(reverseArray1))"
-                                                                ></v-checkbox>
-                                                            </v-card-text>
-                                                        </v-card>
-                                                    </v-col>
-                                                    <v-col cols="12" sm="6" md="4">
-                                                        <v-card outlined>
-                                                            <v-card-title>LED 4</v-card-title>
-                                                            <v-card-text>
-                                                                <v-checkbox
-                                                                        v-model="actionArray1"
-                                                                        label="Use"
-                                                                        :value=8
-                                                                        @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
-                                                      5, sumArray(actionArray1))"
-                                                                ></v-checkbox>
-                                                                <v-checkbox
-                                                                        v-model="reverseArray1"
-                                                                        label="Reverse"
-                                                                        :value=8
-                                                                        @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
-                                                      9, sumArray(reverseArray1))"
-                                                                ></v-checkbox>
-                                                            </v-card-text>
-                                                        </v-card>
-                                                    </v-col>
+                                                    <v-card outlined v-for="n in 16" :key="n">
+                                                        <v-card-title>LED {{n}}</v-card-title>
+                                                        <v-card-text>
+                                                            <NodeEventBitVariable v-bind:node="nodeId"
+                                                                                  v-bind:action="editedEvent.actionId"
+                                                                                  v-bind:variable="getByteValue(n)"
+                                                                                  v-bind:bit="getBitValue(n)"
+                                                                                  name="Use"
+                                                                                  readonly="true"></NodeEventBitVariable>
+                                                            <NodeEventBitVariable v-bind:node="nodeId"
+                                                                                  v-bind:action="editedEvent.actionId"
+                                                                                  v-bind:variable="getByteValue(n)+4"
+                                                                                  v-bind:bit="getBitValue(n)"
+                                                                                  name="Reverse"
+                                                                                  readonly="true"></NodeEventBitVariable>
+                                                        </v-card-text>
+                                                    </v-card>
+
                                                 </v-row>
-                                                <v-row>
-                                                    {{ actionArray1 }} :: {{ reverseArray1 }}
-                                                </v-row>
+
                                                 <v-row v-for="n in node.parameters[5]" :key="n" dense>
                                                     <v-col cols="12" sm="6" md="4">
                                                         <v-text-field
@@ -290,6 +214,8 @@
 <script>
     import NodeParameters from './NodeParameters'
     import {nodeMixin} from '../mixins/nodeMixin.js'
+    import NodeEventVariable from './NodeEventVariable'
+    import NodeEventBitVariable from "./NodeEventBitVariable";
 
     export default {
         name: "mergDefault",
@@ -297,49 +223,27 @@
         //props: ['node'],
         components: {
             // eslint-disable-next-line
-            NodeParameters
+            NodeParameters, NodeEventVariable, NodeEventBitVariable
         },
         data: function () {
-            return {
-                actionArray1: [],
-                reverseArray1: []
-            }
+            return {}
         },
         mounted() {
             //this.nodeId = this.$root.$data.selected_node_id
             // eslint-disable-next-line no-console
             console.log(`Mounted Local: ${this.nodeId} :: ${this.node.node} :: ${this.node.EvCount}`)
 
-            this.actionArray1 = this.getArray(this.$root.$data.nodes[this.$root.$data.selected_node_id].actions[this.editedEvent.actionId].variables[5])
-            this.reverseArray1 = this.getArray(this.$root.$data.nodes[this.$root.$data.selected_node_id].actions[this.editedEvent.actionId].variables[9])
-
         },
-        watch: {
-            SelectedEvent: function () {
-                // eslint-disable-next-line no-console
-                console.log(`actionVariable1() : ${this.$root.$data.nodes[this.$root.$data.selected_node_id].actions[this.editedEvent.actionId].variables[5]}`)
-                this.actionArray1 = this.getArray(this.$root.$data.nodes[this.$root.$data.selected_node_id].actions[this.editedEvent.actionId].variables[5])
-                this.reverseArray1 = this.getArray(this.$root.$data.nodes[this.$root.$data.selected_node_id].actions[this.editedEvent.actionId].variables[9])
+        methods: {
+            getByteValue: function (LED) {
+                return Math.floor((LED-1)/8)+5
             },
-            actionVariable1() {
-                // eslint-disable-next-line no-console
-                console.log(`actionVariable1() : ${this.$root.$data.nodes[this.nodeId].actions[this.editedEvent.actionId].variables[5]}`)
-                this.actionArray1 = this.getArray(this.$root.$data.nodes[this.nodeId].actions[this.editedEvent.actionId].variables[5])
-            },
-            reverseVariable1() {
-                this.reverseArray1 = this.getArray(this.$root.$data.nodes[this.$root.$data.selected_node_id].actions[this.editedEvent.actionId].variables[9])
-            }
-        },
-        computed: {
-            actionVariable1: function () {
-                // eslint-disable-next-line no-console
-                console.log(`actionVariable1 : ${this.$root.$data.nodes[this.$root.$data.selected_node_id].actions[this.editedEvent.actionId].variables[5]}`)
-                return this.$root.$data.nodes[this.$root.$data.selected_node_id].actions[this.editedEvent.actionId].variables[5]
-            },
-            reverseVariable1: function () {
-                // eslint-disable-next-line no-console
-                console.log(`reverseVariable1 : ${this.$root.$data.nodes[this.$root.$data.selected_node_id].actions[this.editedEvent.actionId].variables[9]}`)
-                return this.$root.$data.nodes[this.$root.$data.selected_node_id].actions[this.editedEvent.actionId].variables[9]
+            getBitValue: function(LED) {
+                if (LED % 8 != 0){
+                    return (LED % 8) -1
+                } else {
+                    return 7
+                }
             }
         }
     }

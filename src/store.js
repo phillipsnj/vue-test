@@ -46,6 +46,7 @@ export default new Vuex.Store({
         },
         UPDATE_NODE_EVENT_VARIABLE (state, payload){
             //state.nodes[state.selected_node].variables[payload.variableId] = payload.variableValue
+            console.log(`UPDATE_NODE_EVENT_VARIABLE ${payload.nodeId} : ${payload.actionId}`)
             Vue.set(state.nodes[payload.nodeId].actions[payload.actionId].variables, payload.variableId, payload.variableValue)
         }
     }

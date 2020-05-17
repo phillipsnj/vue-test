@@ -62,7 +62,7 @@
                     </v-row>
                     <v-container v-show="node.variables[SelectedChannelBaseNV]===0">
                         <v-row>
-                            {{ SelectedChannelBaseNV+1 }}
+
                             <NodeBitVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+1" bit="0"
                                              name="Trigger Inverted"></NodeBitVariable>
                             <NodeBitVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+1" bit="3"
@@ -128,6 +128,7 @@
 
                     <v-row v-if="debug">
                         Node Variables {{ node.variables }}
+                        Base NV {{ SelectedChannelBaseNV }}
                     </v-row>
                 </v-container>
             </v-tab-item>
@@ -234,6 +235,7 @@
             <v-tab-item :key="4">
                 <v-layout row wrap>
                     <h2>mergDefault</h2>
+
                     <p>Node ID :: {{ nodeId }}</p>
                     <p>Node {{ node }}</p>
                 </v-layout>
