@@ -42,10 +42,10 @@
         },
         methods: {
             updateTitle() {
-                this.this.$store.state.layout.title = this.title
+                this.$store.state.layout.title = this.title
             },
             updateSubTitle() {
-                this.this.$store.state.subTitle = this.subTitle
+                this.$store.state.layout.subTitle = this.subTitle
             },
         },
     }
