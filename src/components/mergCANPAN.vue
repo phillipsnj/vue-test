@@ -218,7 +218,7 @@
     import NodeEventBitVariable from "./NodeEventBitVariable";
 
     export default {
-        name: "mergDefault",
+        name: "mergCANPAN",
         mixins: [nodeMixin],
         //props: ['node'],
         components: {

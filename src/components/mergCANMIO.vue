@@ -52,7 +52,7 @@
                             <v-select
                                     v-model="node.variables[SelectedChannelBaseNV]"
                                     label="Channel Type"
-                                    :items="NV_types2"
+                                    :items="nvTypes"
                                     item-text="name"
                                     item-value="id"
                                     outlined
@@ -116,7 +116,7 @@
                         </v-row>
                         <v-row>
                             <NodeSliderVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+2"
-                                          name="Off Position"></NodeSliderVariable>
+                                                name="Off Position"></NodeSliderVariable>
                             <NodeSliderVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+3"
                                                 name="On Position"></NodeSliderVariable>
                             <NodeVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+4"
@@ -125,7 +125,96 @@
                                           name="ON to OFF Speed"></NodeVariable>
                         </v-row>
                     </v-container>
-
+                    <v-container v-show="node.variables[SelectedChannelBaseNV]===3">
+                        <v-row>
+                            <NodeBitVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+1" bit="0"
+                                             name="Trigger Inverted"></NodeBitVariable>
+                            <NodeBitVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+1" bit="1"
+                                             name="Cutoff"></NodeBitVariable>
+                            <NodeBitVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+1" bit="2"
+                                             name="Startup"></NodeBitVariable>
+                            <NodeBitVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+1" bit="5"
+                                             name="Action Inverted"></NodeBitVariable>
+                            <NodeBitVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+1" bit="6"
+                                             name="Event Inverted"></NodeBitVariable>
+                        </v-row>
+                        <v-row>
+                            <NodeSliderVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+2"
+                                                name="Upper Position"></NodeSliderVariable>
+                            <NodeSliderVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+3"
+                                                name="Lower Position"></NodeSliderVariable>
+                            <NodeVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+4"
+                                          name="Bounce Coefficient"></NodeVariable>
+                            <NodeVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+5"
+                                          name="Pull Speed"></NodeVariable>
+                            <NodeVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+6"
+                                          name="Pull pause"></NodeVariable>
+                        </v-row>
+                    </v-container>
+                    <v-container v-show="node.variables[SelectedChannelBaseNV]===4">
+                        <v-row>
+                            <NodeBitVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+1" bit="0"
+                                             name="Trigger Inverted"></NodeBitVariable>
+                            <NodeBitVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+1" bit="1"
+                                             name="Cutoff"></NodeBitVariable>
+                            <NodeBitVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+1" bit="2"
+                                             name="Startup"></NodeBitVariable>
+                            <NodeBitVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+1" bit="5"
+                                             name="Action Inverted"></NodeBitVariable>
+                            <NodeBitVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+1" bit="6"
+                                             name="Event Inverted"></NodeBitVariable>
+                        </v-row>
+                        <v-row>
+                            <NodeVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+2"
+                                                name="Num Pos"></NodeVariable>
+                            <NodeSliderVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+3"
+                                                name="Position 1"></NodeSliderVariable>
+                            <NodeSliderVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+4"
+                                          name="Position 2" v-if="node.variables[SelectedChannelBaseNV+2] > 1"></NodeSliderVariable>
+                            <NodeSliderVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+5"
+                                          name="Position 3" v-if="node.variables[SelectedChannelBaseNV+2] > 2"></NodeSliderVariable>
+                            <NodeSliderVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+6"
+                                          name="Position 4" v-if="node.variables[SelectedChannelBaseNV+2] > 3"></NodeSliderVariable>
+                        </v-row>
+                    </v-container>
+                    <v-container v-show="node.variables[SelectedChannelBaseNV]===5">
+                        <v-row>
+                            <NodeBitVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+1" bit="0"
+                                             name="Trigger Inverted"></NodeBitVariable>
+                            <NodeBitVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+1" bit="5"
+                                             name="Action Inverted"></NodeBitVariable>
+                            <NodeBitVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+1" bit="6"
+                                             name="Event Inverted"></NodeBitVariable>
+                        </v-row>
+                        <v-row>
+                            <NodeVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+3"
+                                                name="Threshold"></NodeVariable>
+                            <NodeVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+4"
+                                                name="Hysteresis"></NodeVariable>
+                        </v-row>
+                    </v-container>
+                    <v-container v-show="node.variables[SelectedChannelBaseNV]===6">
+                        <v-row>
+                            <NodeBitVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+1" bit="0"
+                                             name="Trigger Inverted"></NodeBitVariable>
+                            <NodeBitVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+1" bit="5"
+                                             name="Action Inverted"></NodeBitVariable>
+                            <NodeBitVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+1" bit="6"
+                                             name="Event Inverted"></NodeBitVariable>
+                        </v-row>
+                        <v-row>
+                            <NodeVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+2"
+                                          name="Do Setup"></NodeVariable>
+                            <NodeVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+3"
+                                                name="Threshold"></NodeVariable>
+                            <NodeVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+3"
+                                          name="Hysteresis"></NodeVariable>
+                            <NodeVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+3"
+                                          name="Offset H"></NodeVariable>
+                            <NodeVariable v-bind:node="node.node" :variable="SelectedChannelBaseNV+3"
+                                          name="Offset L"></NodeVariable>
+                        </v-row>
+                    </v-container>
                     <v-row v-if="debug">
                         Node Variables {{ node.variables }}
                         Base NV {{ SelectedChannelBaseNV }}
@@ -167,23 +256,15 @@
                                                 </v-col>
                                                 <v-col cols="12" sm="6" md="4">
                                                     <v-text-field v-model="editedEvent.actionId"
-                                                                  label="actionId"></v-text-field>
+                                                                  label="actionId" readonly></v-text-field>
                                                 </v-col>
                                                 <v-col cols="12" sm="6" md="4">
                                                     <v-text-field
                                                             v-model="node.actions[editedEvent.actionId].variables[0]"
-                                                            label="No of Event Variables"></v-text-field>
+                                                            label="No of Event Variables" readonly></v-text-field>
                                                 </v-col>
                                             </v-row>
                                             <v-row v-for="n in numberEventVariables" :key="n" dense>
-                                                <!--<v-col cols="12" sm="6" md="4">
-                                                    <v-text-field
-                                                            label="Variable"
-                                                            :value="n"
-                                                            readonly
-                                                    >
-                                                    </v-text-field>
-                                                </v-col>-->
                                                 <v-col cols="12" sm="6" md="4" v-if="n==1">
                                                     <v-text-field
                                                             label="Value"
@@ -195,7 +276,7 @@
                                                 </v-col>
                                                 <v-col v-if="n>1">
                                                     <v-select
-                                                            :label="`Action ${n}`"
+                                                            :label="`Action ${n-1}`"
                                                             v-model="node.actions[editedEvent.actionId].variables[n]"
                                                             :items="event_actions"
                                                             item-text="name"
@@ -265,7 +346,13 @@
                 SelectedChannelBaseNV: 16,
                 flags_array: [],
                 event_actions: [],
-                NV_types: {0: "Input", 1: "Output", 2: "Servo", 3: "Bounce", 4: "Multi", 5: "Analogue", 6: "Magnet"},
+                NV_types1: [
+                    {"id": 0, "name": "Input"},
+                    {"id": 1, "name": "Output"},
+                    {"id": 2, "name": "Servo"},
+                    {"id": 3, "name": "Bounce"},
+                    {"id": 4, "name": "Multi"},
+                ],
                 NV_types2: [
                     {"id": 0, "name": "Input"},
                     {"id": 1, "name": "Output"},
@@ -295,6 +382,14 @@
                     return this.node.actions[this.editedEvent.actionId].variables[0] + 2
                 } else {
                     return 20
+                }
+            },
+            nvTypes: function() {
+                console.log(`Selected Channel ${this.SelectedChannel}`)
+                if (this.SelectedChannel < 9) {
+                    return this.NV_types1
+                } else {
+                    return this.NV_types2
                 }
             }
         },
@@ -354,9 +449,15 @@
                         this.event_actions.push({"id": y + 2, "name": `Ch-${x} OFF`})
                     } else if (this.node.variables[i] == 4) {
                         this.event_actions.push({"id": y, "name": `Ch-${x} AT1`})
-                        this.event_actions.push({"id": y + 1, "name": `Ch-${x} AT2`})
-                        this.event_actions.push({"id": y + 2, "name": `Ch-${x} AT3`})
-                        this.event_actions.push({"id": y + 3, "name": `Ch-${x} AT4`})
+                        if (this.node.variables[i+2] > 1) {
+                            this.event_actions.push({"id": y + 1, "name": `Ch-${x} AT2`})
+                        }
+                        if (this.node.variables[i+2] > 2) {
+                            this.event_actions.push({"id": y + 2, "name": `Ch-${x} AT3`})
+                        }
+                        if (this.node.variables[i+2] > 3) {
+                            this.event_actions.push({"id": y + 3, "name": `Ch-${x} AT4`})
+                        }
                     }
                     x = x + 1
                     y = y + 5

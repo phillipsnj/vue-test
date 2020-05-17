@@ -69,26 +69,6 @@
                                             <v-row>
                                                 <NodeEventVariable v-bind:node="nodeId" v-bind:action="editedEvent.actionId" v-bind:variable="n" v-for="n in node.parameters[5]" :key="n"></NodeEventVariable>
                                             </v-row>
-                                            <v-row v-for="n in node.parameters[5]" :key="n" dense>
-                                                <v-col cols="12" sm="6" md="4">
-                                                    <v-text-field
-                                                            label="Variable"
-                                                            :value="n"
-                                                            readonly
-                                                    >
-                                                    </v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                    <v-text-field
-                                                            label="Value"
-                                                            v-model="node.actions[editedEvent.actionId].variables[n]"
-                                                            @change="updateEV(node.node, node.actions[editedEvent.actionId].event, node.actions[editedEvent.actionId].actionId,
-                                                      n, parseInt(node.actions[editedEvent.actionId].variables[n]))"
-                                                    >
-                                                    </v-text-field>
-                                                </v-col>
-
-                                            </v-row>
                                         </v-container>
                                     </v-card-text>
                                 </v-card>
